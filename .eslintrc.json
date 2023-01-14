@@ -1,0 +1,24 @@
+{
+    "env": {
+        "browser": false,
+        "commonjs": false,
+        "es2021": true,
+        "node": true
+    },
+    "extends": [
+        "airbnb-base",
+        "plugin:jest/recommended"
+    ],
+    "overrides": [],
+    "parserOptions": {
+        "ecmaVersion": "latest"
+    },
+    "rules": {
+        "no-use-before-define": [
+            "error",
+            {
+                "function": false
+            }
+        ]
+    }
+}
