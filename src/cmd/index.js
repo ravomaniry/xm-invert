@@ -3,6 +3,7 @@ const { hideBin } = require('yargs/helpers');
 const chalk = require('chalk');
 const { readFileSync, writeFileSync } = require('fs');
 const { invertXml } = require('../xml-invert');
+const { resolve } = require('path');
 
 (async () => {
   try {
@@ -17,7 +18,7 @@ const { invertXml } = require('../xml-invert');
     const raw = readFileSync(inPath, 'utf-8');
     const inverted = await invertXml(raw);
     writeFileSync(outPath, inverted, 'utf-8');
-    console.log(chalk.green('Done!'));
+    console.log(chalk.green(`=> ${resolve(outPath)}`));
   } catch (error) {
     console.log(chalk.red(error.message));
     process.exit(1);
